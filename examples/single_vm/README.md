@@ -4,9 +4,9 @@ Example Ubuntu Cloud-Init VM deployment
 ## 
 
 ```bash
-export PM_API_URL
-export PM_USER
-export PM_PASS
+export PM_API_URL=""
+export PM_USER=""
+export PM_PASS=""
 
 terraform init
 terraform plan

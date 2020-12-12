@@ -8,8 +8,8 @@ terraform {
 }
 
 provider "proxmox" {
-  pm_api_url      = "https://proxmox.stevehibit.com:8006/api2/json" //PM_API_URL
-  pm_user         = "root@pam" //PM_USER
+  pm_api_url = "https://proxmox.stevehibit.com:8006/api2/json" //PM_API_URL
+  pm_user    = "root@pam"                                      //PM_USER
   //pm_password     = var.proxmox_password //PM_PASS
   pm_tls_insecure = true
 }
