@@ -3,10 +3,11 @@ locals {
   proxmox_node          = var.proxmox_node
   proxmox_resource_pool = var.proxmox_resource_pool
 
-  vm_name        = var.vm_name
-  vm_id          = var.vm_id != null ? var.vm_id : 0
-  vm_description = var.vm_description
-  vm_onboot      = var.vm_onboot
+  vm_name           = var.vm_name
+  vm_id             = var.vm_id != null ? var.vm_id : 0
+  vm_description    = var.vm_description
+  vm_start_on_boot  = var.vm_start_on_boot
+  vm_boot_order     = var.vm_boot_order != null ? var.vm_boot_order : ""
 
   template_clone      = var.template_clone
   template_full_clone = var.template_full_clone

@@ -7,7 +7,7 @@ resource "proxmox_vm_qemu" "cloudinit" {
   os_type = "cloud-init"
   onboot  = local.vm_start_on_boot
   agent   = 1
-  boot    = ""
+  boot    = local.vm_boot_order
 
   target_node = local.proxmox_node
   pool        = local.proxmox_resource_pool

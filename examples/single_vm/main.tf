@@ -1,3 +1,19 @@
+terraform {
+  required_providers {
+    proxmox = {
+      source  = "telmate/proxmox"
+      version = "~>2.0"
+    }
+  }
+}
+
+provider "proxmox" {
+  pm_api_url      = "https://proxmox.stevehibit.com:8006/api2/json" //PM_API_URL
+  pm_user         = "root@pam" //PM_USER
+  //pm_password     = var.proxmox_password //PM_PASS
+  pm_tls_insecure = true
+}
+
 module "ubuntu-vm" {
   source = "../.."
 
@@ -30,9 +46,6 @@ module "ubuntu-vm" {
     }
   ]
 
-  proxmox_api_url = "https://proxmox.stevehibit.com:8006/api2/json" //PM_API_URL
-  proxmox_user    = "root@pam"                                      //PM_USER
-  //SSproxmox_password     = "*****" //PM_PASS
-  proxmox_tls_insecure = true
+
 
 }

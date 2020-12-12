@@ -29,10 +29,16 @@ variable "vm_description" {
   default     = null
 }
 
-variable "vm_onboot" {
+variable "vm_start_on_boot" {
   type        = bool
   description = "Specifies whether a VM will be started during system bootup."
   default     = false
+}
+
+variable "vm_boot_order" {
+  type        = string
+  description = "The boot order for the VM. Proxmox 6.2 changed boot order text from 'cdn'."
+  default     = ""
 }
 
 variable "template_full_clone" {
