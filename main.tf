@@ -40,9 +40,9 @@ resource "proxmox_vm_qemu" "cloudinit" {
   # Additional Networks - Future
 
   # Cloud-Init Drive
-  ciuser        = local.admin_username
-  cipassword    = local.admin_password
-  sshkeys       = <<-EOF
+  ciuser     = local.admin_username
+  cipassword = local.admin_password
+  sshkeys    = <<-EOF
   %{for key in local.admin_public_ssh_keys~}
   ${key}
   %{endfor~}
@@ -51,8 +51,8 @@ resource "proxmox_vm_qemu" "cloudinit" {
   # ci_wait = null
   # cicustom = null
 
-  nameserver    = null
-  searchdomain  = null
-  ipconfig0     = join(",", compact(local.ipconfig0_elements))
+  nameserver   = null
+  searchdomain = null
+  ipconfig0    = join(",", compact(local.ipconfig0_elements))
 
 }

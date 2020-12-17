@@ -23,7 +23,7 @@ module "ubuntu_vm" {
   template_full_clone = true
 
   # Must not be any existing user like 'admin' or 'ubuntu'
-  admin_username = "localadmin" 
+  admin_username = "localadmin"
   admin_password = "p@sswordz"
   # Uncomment and populate if the template does not allow SSH password authentication.
   # admin_public_ssh_keys = []

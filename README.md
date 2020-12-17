@@ -57,6 +57,8 @@ iso9660 (isofs) module must be loaded for cloud-init to mount the Proxmox cloud-
 
 | Name | Description |
 |------|-------------|
-| vm | n/a |
+| clone | Template name that this VM was cloned from. |
+| vm\_id | The VM Id. |
+| vm\_name | The VM name. |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
