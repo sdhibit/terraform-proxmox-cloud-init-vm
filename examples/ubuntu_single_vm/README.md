@@ -15,10 +15,7 @@ terraform apply
 
 ## Install Cloud-Init enabled Ubuntu VM in Proxmox
 
-This section will configure a cloud-init enabled Ubuntu 20.04 template on the Proxmox system. Alternatively, the packer template repository 
-
-- https://pawa.lt/posts/2019/07/automating-k3s-deployment-on-proxmox/
-- https://forum.proxmox.com/threads/installing-virt-customize-ok.78572/
+This section will configure a cloud-init enabled Ubuntu 20.04 template on the Proxmox system. Alternatively, the [packer-proxmox-templates](https://github.com/sdhibit/packer-proxmox-templates) project can be used to build a cloud-init enabled Ubuntu 20.04 VM.
 
 ### Download Ubuntu Cloud Image
 ```bash
@@ -70,3 +67,8 @@ qm template $VM_ID
 ```bash
 rm focal-server-cloudimg-amd64.img
 ```
+
+### References
+The following links/tutorials were used to help develop this example.
+- https://pawa.lt/posts/2019/07/automating-k3s-deployment-on-proxmox/
+- https://forum.proxmox.com/threads/installing-virt-customize-ok.78572/
