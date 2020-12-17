@@ -43,6 +43,10 @@ module "ubuntu_vm" {
 
 }
 
-output "vm" {
-  value = module.ubuntu_vm.vm
+output "vm_id" {
+  value = module.ubuntu_vm.vm_id
+}
+
+output "vm_name" {
+  value = module.ubuntu_vm.vm_name
 }
