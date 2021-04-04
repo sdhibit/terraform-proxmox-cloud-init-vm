@@ -55,4 +55,6 @@ resource "proxmox_vm_qemu" "cloudinit" {
   searchdomain = null
   ipconfig0    = join(",", compact(local.ipconfig0_elements))
 
+  tags = join(",", local.tags)
+
 }
