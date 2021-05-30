@@ -41,6 +41,11 @@ module "ubuntu_vm" {
     }
   ]
 
+  tags = [
+    "tag1",
+    "tag2"
+  ]
+
 }
 
 output "vm_id" {

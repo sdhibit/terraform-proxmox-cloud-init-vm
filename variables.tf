@@ -157,3 +157,9 @@ variable "proxmox_resource_pool" {
   description = "Name of resource pool to create virtual machine in."
   default     = null
 }
+
+variable "tags" {
+  type        = list(string)
+  description = "List of virtual machine tags."
+  default     = []
+}
