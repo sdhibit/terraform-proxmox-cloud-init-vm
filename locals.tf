@@ -36,5 +36,5 @@ locals {
     var.primary_network_gateway != null ? "gw=${var.primary_network_gateway}" : ""
   ]
 
-  tags = var.tags 
+  tags = var.tags
 }
