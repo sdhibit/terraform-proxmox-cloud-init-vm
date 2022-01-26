@@ -14,7 +14,6 @@ resource "proxmox_vm_qemu" "cloudinit" {
 
   clone      = local.template_clone
   full_clone = local.template_full_clone
-  clone_wait = local.clone_wait
 
   cores   = local.cores
   sockets = local.sockets

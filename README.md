@@ -16,13 +16,23 @@ iso9660 (isofs) module must be loaded for cloud-init to mount the Proxmox cloud-
 | Name | Version |
 |------|---------|
 | terraform | >=0.14 |
-| proxmox | >=2.6.5 |
+| proxmox | ~>2.9.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| proxmox | >=2.6.5 |
+| proxmox | ~>2.9.0 |
+
+## Modules
+
+No Modules.
+
+## Resources
+
+| Name |
+|------|
+| [proxmox_vm_qemu](https://registry.terraform.io/providers/Telmate/proxmox/~>2.9.0/docs/resources/vm_qemu) |
 
 ## Inputs
 
@@ -45,6 +55,7 @@ iso9660 (isofs) module must be loaded for cloud-init to mount the Proxmox cloud-
 | proxmox\_node | Which node in the Proxmox cluster to start the virtual machine on during creation. | `string` | `"proxmox"` | no |
 | proxmox\_resource\_pool | Name of resource pool to create virtual machine in. | `string` | `null` | no |
 | sockets | How many CPU sockets to give the virtual machine. | `number` | `1` | no |
+| tags | List of virtual machine tags. | `list(string)` | `[]` | no |
 | template\_clone | Name of the Proxmox template to clone from. | `string` | n/a | yes |
 | template\_full\_clone | Performs a full clone of the template when enabled. | `bool` | `true` | no |
 | vm\_boot\_order | The boot order for the VM. Proxmox 6.2 changed boot order text from 'cdn'. | `string` | `""` | no |
@@ -60,5 +71,4 @@ iso9660 (isofs) module must be loaded for cloud-init to mount the Proxmox cloud-
 | clone | Template name that this VM was cloned from. |
 | vm\_id | The VM Id. |
 | vm\_name | The VM name. |
-
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

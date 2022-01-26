@@ -11,7 +11,6 @@ locals {
 
   template_clone      = var.template_clone
   template_full_clone = var.template_full_clone
-  clone_wait          = 60
 
   admin_username        = var.admin_username
   admin_password        = var.admin_password
@@ -37,5 +36,5 @@ locals {
     var.primary_network_gateway != null ? "gw=${var.primary_network_gateway}" : ""
   ]
 
-  tags = var.tags 
+  tags = var.tags
 }
