@@ -39,9 +39,10 @@ resource "proxmox_vm_qemu" "cloudinit" {
   # Additional Networks - Future
 
   # Cloud-Init Drive
+  cicustom   = local.cicustom
   ciuser     = local.admin_username
   cipassword = local.admin_password
-  sshkeys    = <<-EOF
+  sshkeys    = var.cicustom != null ? null : <<-EOF
   %{for key in local.admin_public_ssh_keys~}
   ${key}
   %{endfor~}

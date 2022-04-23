@@ -10,11 +10,6 @@ variable "template_clone" {
   description = "Name of the Proxmox template to clone from."
 }
 
-variable "admin_username" {
-  type        = string
-  description = "The username of the local administrator. This is set during the cloud-init process."
-}
-
 #### Optional Parameters #####
 
 variable "vm_id" {
@@ -47,9 +42,15 @@ variable "template_full_clone" {
   default     = true
 }
 
+variable "admin_username" {
+  type        = string
+  description = "The username of the local administrator. This is set during the cloud-init process. If this is null, cicustom must be set."
+  default     = null
+}
+
 variable "admin_password" {
   type        = string
-  description = "The password of the local administrator. This is set during the cloud-init process. If this is null, admin_ssh_public_keys must be set."
+  description = "The password of the local administrator. This is set during the cloud-init process. If this is null, admin_ssh_public_keys or cicustom must be set."
   default     = null
 }
 
@@ -162,4 +163,10 @@ variable "tags" {
   type        = list(string)
   description = "List of virtual machine tags."
   default     = []
+}
+
+variable "cicustom" {
+  type        = string
+  description = "Location of a custom cloudinit config to use. E.g. user=local:snippets/user-data_vm-foo.yml. If this is null, admin_username must be set and admin_password or admin_public_ssh_keys."
+  default     = null
 }

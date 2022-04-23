@@ -12,9 +12,11 @@ locals {
   template_clone      = var.template_clone
   template_full_clone = var.template_full_clone
 
-  admin_username        = var.admin_username
-  admin_password        = var.admin_password
-  admin_public_ssh_keys = var.admin_public_ssh_keys
+  cicustom = var.cicustom
+
+  admin_username        = var.cicustom == null ? var.admin_username : null
+  admin_password        = var.cicustom == null ? var.admin_password : null
+  admin_public_ssh_keys = var.cicustom == null ? var.admin_public_ssh_keys : null
 
   sockets = var.sockets
   cores   = var.cores
