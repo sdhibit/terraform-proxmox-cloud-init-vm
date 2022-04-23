@@ -41,6 +41,12 @@ variable "vm_boot_order" {
   default     = ""
 }
 
+variable "vm_boot_disk" {
+  description = "Enable booting from specified disk. You shouldn't need to change this under most circumstances."
+  type        = string
+  default     = null
+}
+
 variable "template_full_clone" {
   type        = bool
   description = "Performs a full clone of the template when enabled."

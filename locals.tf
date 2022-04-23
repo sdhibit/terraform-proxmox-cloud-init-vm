@@ -8,6 +8,7 @@ locals {
   vm_description   = var.vm_description
   vm_start_on_boot = var.vm_start_on_boot
   vm_boot_order    = var.vm_boot_order != null ? var.vm_boot_order : ""
+  vm_boot_disk     = var.vm_boot_disk
 
   template_clone      = var.template_clone
   template_full_clone = var.template_full_clone

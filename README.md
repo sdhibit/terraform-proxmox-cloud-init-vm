@@ -58,6 +58,7 @@ No Modules.
 | tags | List of virtual machine tags. | `list(string)` | `[]` | no |
 | template\_clone | Name of the Proxmox template to clone from. | `string` | n/a | yes |
 | template\_full\_clone | Performs a full clone of the template when enabled. | `bool` | `true` | no |
+| vm\_boot\_disk | Enable booting from specified disk. You shouldn't need to change this under most circumstances. | `string` | `null` | no |
 | vm\_boot\_order | The boot order for the VM. Proxmox 6.2 changed boot order text from 'cdn'. | `string` | `""` | no |
 | vm\_description | The virtual machine description. | `string` | `null` | no |
 | vm\_id | The ID of the virtual machine. If not set, the next available ID will be used. | `number` | `null` | no |
