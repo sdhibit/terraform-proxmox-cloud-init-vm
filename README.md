@@ -38,9 +38,10 @@ No Modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| admin\_password | The password of the local administrator. This is set during the cloud-init process. If this is null, admin\_ssh\_public\_keys must be set. | `string` | `null` | no |
-| admin\_public\_ssh\_keys | The public keys of the local administrator. This is set during the cloud-init process. If this is null, admin\_password must be set. | `list(string)` | `[]` | no |
-| admin\_username | The username of the local administrator. This is set during the cloud-init process. | `string` | n/a | yes |
+| admin\_password | The password of the local administrator. This is set during the cloud-init process. If this is null, admin\_ssh\_public\_keys or cicustom must be set. | `string` | `null` | no |
+| admin\_public\_ssh\_keys | The public keys of the local administrator. This is set during the cloud-init process. If this is null, admin\_password or cicustom must be set. | `list(string)` | `[]` | no |
+| admin\_username | The username of the local administrator. This is set during the cloud-init process. If this is null, cicustom must be set. | `string` | `null` | no |
+| cicustom | Location of a custom cloudinit config to use. E.g. user=local:snippets/user-data_vm-foo.yml. If this is null, admin_username must be set and admin_password or admin_public_ssh_keys. | `string` | `null` | no |
 | cores | How many CPU cores to give the virtual machine. | `number` | `1` | no |
 | disk\_default\_format | The format of the file backing the disk. | `string` | `"raw"` | no |
 | disk\_default\_size | The size of the disk, including a unit suffix, such as 10G to indicate 10 gigabytes. | `string` | `null` | no |
