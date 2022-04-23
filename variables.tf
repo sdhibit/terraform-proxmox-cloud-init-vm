@@ -169,3 +169,9 @@ variable "tags" {
   description = "List of virtual machine tags."
   default     = []
 }
+
+variable "vm_qemu_os" {
+  type        = string
+  description = "The type of OS in the guest. Set properly to allow Proxmox to enable optimizations for the appropriate guest OS."
+  default     = null
+}

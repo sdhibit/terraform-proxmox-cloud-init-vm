@@ -63,6 +63,7 @@ No Modules.
 | vm\_description | The virtual machine description. | `string` | `null` | no |
 | vm\_id | The ID of the virtual machine. If not set, the next available ID will be used. | `number` | `null` | no |
 | vm\_name | The virtual machine name. | `string` | n/a | yes |
+| vm\_qemu\_os | The type of OS in the guest. Set properly to allow Proxmox to enable optimizations for the appropriate guest OS. It takes the value from the source template and ignore any changes to resource configuration parameter. | `string` | `null` | no |
 | vm\_start\_on\_boot | Specifies whether a VM will be started during system bootup. | `bool` | `false` | no |
 
 ## Outputs
