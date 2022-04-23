@@ -1,13 +1,15 @@
 
 /* Uses cloud-init options from Proxmox 5.2 onward */
 resource "proxmox_vm_qemu" "cloudinit" {
-  name    = local.vm_name
-  desc    = local.vm_description
-  vmid    = local.vm_id
-  os_type = "cloud-init"
-  agent   = 1
-  onboot  = local.vm_start_on_boot
-  boot    = local.vm_boot_order
+  name     = local.vm_name
+  desc     = local.vm_description
+  vmid     = local.vm_id
+  os_type  = "cloud-init"
+  qemu_os  = local.vm_qemu_os
+  agent    = 1
+  onboot   = local.vm_start_on_boot
+  boot     = local.vm_boot_order
+  bootdisk = local.vm_boot_disk
 
   target_node = local.proxmox_node
   pool        = local.proxmox_resource_pool

@@ -41,6 +41,12 @@ variable "vm_boot_order" {
   default     = ""
 }
 
+variable "vm_boot_disk" {
+  description = "Enable booting from specified disk. You shouldn't need to change this under most circumstances."
+  type        = string
+  default     = null
+}
+
 variable "template_full_clone" {
   type        = bool
   description = "Performs a full clone of the template when enabled."
@@ -162,4 +168,10 @@ variable "tags" {
   type        = list(string)
   description = "List of virtual machine tags."
   default     = []
+}
+
+variable "vm_qemu_os" {
+  type        = string
+  description = "The type of OS in the guest. Set properly to allow Proxmox to enable optimizations for the appropriate guest OS."
+  default     = null
 }
