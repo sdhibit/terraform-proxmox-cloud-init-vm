@@ -30,9 +30,9 @@ This step will install qemu-guest-agent on the Ubuntu cloud image via `virt-cust
 # Install libguestfs-tools on Proxmox server.
 apt-get install libguestfs-tools
 # Install qemu-guest-agent on Ubuntu image.
-virt-customize -a focal-server-cloudimg-amd64.img --install qemu-guest-agent
+virt-customize -a focal-server-cloudimg-amd64.img --install qemu-guest-agent --truncate /etc/machine-id
 # Enable password authentication in the template. Obviously, not recommended for except for testing.
-virt-customize -a focal-server-cloudimg-amd64.img --run-command "sed -i 's/.*PasswordAuthentication.*/PasswordAuthentication yes/g' /etc/ssh/sshd_config"
+virt-customize -a focal-server-cloudimg-amd64.img --run-command "sed -i 's/.*PasswordAuthentication.*/PasswordAuthentication yes/g' /etc/ssh/sshd_config" --truncate /etc/machine-id
 ```
 
 ### Create Proxmox VM from Ubuntu Cloud Image
